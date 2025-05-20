@@ -248,7 +248,7 @@ export default function DashboardPage() {
             width={600} 
             height={400} 
             className="w-full h-auto object-cover"
-            data-ai-hint="children learning" 
+            data-ai-hint="senegal education" 
           />
         </Card>
       </section>
