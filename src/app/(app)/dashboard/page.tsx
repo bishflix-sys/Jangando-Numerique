@@ -35,6 +35,13 @@ export default function DashboardPage() {
     { value: "joo", label: "Joola" },
     { value: "mnk", label: "Mandinka" },
     { value: "snk", label: "Soninké" },
+    { value: "bal", label: "Balante" },
+    { value: "mnj", label: "Manjak" },
+    { value: "noon", label: "Noon" },
+    { value: "leh", label: "Lehar" },
+    { value: "saa", label: "Saafi" },
+    { value: "bsc", label: "Bassari" },
+    { value: "tnr", label: "Bedik" },
   ];
 
   const handleTranslate = async () => {
@@ -248,3 +255,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
