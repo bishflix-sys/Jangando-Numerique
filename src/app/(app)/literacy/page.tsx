@@ -16,60 +16,60 @@ interface LiteracyTopic {
 const literacyTopics: LiteracyTopic[] = [
   {
     id: "1",
-    title: "Introduction to Your Smartphone",
-    description: "Learn the basics of using a smartphone, making calls, and sending messages.",
+    title: "Introduction à Votre Smartphone",
+    description: "Apprenez les bases de l'utilisation d'un smartphone, passer des appels et envoyer des messages.",
     icon: Smartphone,
     details: [
-      "Turning your phone on and off.",
-      "Understanding touchscreen gestures.",
-      "Making and receiving calls.",
-      "Sending and reading text messages (SMS).",
-      "Managing contacts.",
+      "Allumer et éteindre votre téléphone.",
+      "Comprendre les gestes de l'écran tactile.",
+      "Passer et recevoir des appels.",
+      "Envoyer et lire des messages texte (SMS).",
+      "Gérer les contacts.",
     ],
     image: "https://placehold.co/600x300.png",
     imageHint: "smartphone usage"
   },
   {
     id: "2",
-    title: "Navigating the Web",
-    description: "Discover how to use the internet, search for information, and browse websites.",
+    title: "Naviguer sur le Web",
+    description: "Découvrez comment utiliser Internet, rechercher des informations et naviguer sur des sites Web.",
     icon: Globe,
     details: [
-      "What is the internet?",
-      "Using a web browser (e.g., Chrome, Firefox).",
-      "How to search for information using Google.",
-      "Understanding website addresses (URLs).",
-      "Identifying safe and reliable websites.",
+      "Qu'est-ce qu'Internet ?",
+      "Utiliser un navigateur Web (ex: Chrome, Firefox).",
+      "Comment rechercher des informations avec Google.",
+      "Comprendre les adresses de sites Web (URL).",
+      "Identifier les sites Web sûrs et fiables.",
     ],
     image: "https://placehold.co/600x300.png",
     imageHint: "internet browsing"
   },
   {
     id: "3",
-    title: "Online Safety and Privacy",
-    description: "Understand how to protect yourself and your information online.",
+    title: "Sécurité et Confidentialité en Ligne",
+    description: "Comprenez comment vous protéger et protéger vos informations en ligne.",
     icon: ShieldCheck,
     details: [
-      "Creating strong passwords.",
-      "Recognizing online scams and phishing.",
-      "Protecting your personal information.",
-      "Safe social media practices.",
-      "Understanding privacy settings.",
+      "Créer des mots de passe forts.",
+      "Reconnaître les arnaques en ligne et le phishing.",
+      "Protéger vos informations personnelles.",
+      "Pratiques sécurisées sur les médias sociaux.",
+      "Comprendre les paramètres de confidentialité.",
     ],
     image: "https://placehold.co/600x300.png",
     imageHint: "online security"
   },
   {
     id: "4",
-    title: "Connecting to Wi-Fi",
-    description: "Learn how to find and connect to Wi-Fi networks for internet access.",
+    title: "Se Connecter au Wi-Fi",
+    description: "Apprenez à trouver et à vous connecter aux réseaux Wi-Fi pour accéder à Internet.",
     icon: Wifi,
     details: [
-      "What is Wi-Fi?",
-      "Finding available Wi-Fi networks.",
-      "Connecting to a secure Wi-Fi network.",
-      "Understanding Wi-Fi passwords.",
-      "Troubleshooting common connection issues.",
+      "Qu'est-ce que le Wi-Fi ?",
+      "Trouver les réseaux Wi-Fi disponibles.",
+      "Se connecter à un réseau Wi-Fi sécurisé.",
+      "Comprendre les mots de passe Wi-Fi.",
+      "Dépannage des problèmes de connexion courants.",
     ],
      image: "https://placehold.co/600x300.png",
     imageHint: "wifi connection"
@@ -80,9 +80,9 @@ export default function LiteracyPage() {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Digital Literacy Module</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Module d'Alphabétisation Numérique</h1>
         <p className="text-muted-foreground text-lg">
-          Empower yourself with essential digital skills in your local language.
+          Renforcez vos capacités avec des compétences numériques essentielles dans votre langue locale.
         </p>
       </header>
 
@@ -114,7 +114,7 @@ export default function LiteracyPage() {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value={`item-${topic.id}`}>
                   <AccordionTrigger className="text-base hover:no-underline">
-                    What you will learn
+                    Ce que vous allez apprendre
                   </AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2 pt-2">

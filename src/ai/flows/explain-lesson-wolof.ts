@@ -1,11 +1,11 @@
 // src/ai/flows/explain-lesson-wolof.ts
 'use server';
 /**
- * @fileOverview An AI chatbot that explains lessons in Wolof.
+ * @fileOverview Un chatbot IA qui explique les leçons en Wolof.
  *
- * - explainLessonWolof - A function that handles the lesson explanation process in Wolof.
- * - ExplainLessonWolofInput - The input type for the explainLessonWolof function.
- * - ExplainLessonWolofOutput - The return type for the explainLessonWolof function.
+ * - explainLessonWolof - Une fonction qui gère le processus d'explication des leçons en Wolof.
+ * - ExplainLessonWolofInput - Le type d'entrée pour la fonction explainLessonWolof.
+ * - ExplainLessonWolofOutput - Le type de retour pour la fonction explainLessonWolof.
  */
 
 import {ai} from '@/ai/genkit';

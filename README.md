@@ -1,5 +1,5 @@
-# Firebase Studio
+# Jàngandoo Numérique
 
-This is a NextJS starter in Firebase Studio.
+Ceci est un projet de démarrage NextJS pour Jàngandoo Numérique.
 
-To get started, take a look at src/app/page.tsx.
+Pour commencer, jetez un œil à src/app/page.tsx.

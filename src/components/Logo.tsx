@@ -34,7 +34,7 @@ export function Logo() {
            <SenegalMotifIcon className="h-6 w-6 text-primary-foreground" />
         </div>
         <h1 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-          LinguaLearn <span className="text-primary group-hover:text-foreground transition-colors">Sénégal</span>
+          Jàngandoo <span className="text-primary group-hover:text-foreground transition-colors">Numérique</span>
         </h1>
       </>
     </Link>

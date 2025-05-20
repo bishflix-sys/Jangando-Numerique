@@ -63,9 +63,9 @@ export default function LessonsPage() {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Translated Lessons</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Leçons Traduites</h1>
         <p className="text-muted-foreground text-lg">
-          Explore lessons available in various local languages.
+          Explorez les leçons disponibles dans diverses langues locales.
         </p>
       </header>
 
@@ -100,13 +100,13 @@ export default function LessonsPage() {
             </CardContent>
             <CardFooter className="flex items-center justify-between gap-2 border-t pt-4">
               {/* Placeholder for voice content */}
-              <Button variant="ghost" size="sm" aria-label="Listen to lesson">
+              <Button variant="ghost" size="sm" aria-label="Écouter la leçon">
                 <Volume2 className="h-5 w-5 mr-2" />
-                Listen
+                Écouter
               </Button>
               <Button variant="default" size="sm">
                 <PlayCircle className="h-5 w-5 mr-2" />
-                Start Lesson
+                Commencer la Leçon
               </Button>
             </CardFooter>
           </Card>

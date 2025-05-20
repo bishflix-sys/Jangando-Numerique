@@ -9,25 +9,25 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Welcome to LinguaLearn Sénégal!</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Bienvenue sur Jàngandoo Numérique !</h1>
         <p className="text-muted-foreground text-lg">
-          Your gateway to learning and digital literacy in local languages.
+          Votre portail d'apprentissage et d'alphabétisation numérique en langues locales.
         </p>
       </header>
 
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xl font-semibold">Translated Lessons</CardTitle>
+            <CardTitle className="text-xl font-semibold">Leçons Traduites</CardTitle>
             <BookOpen className="h-6 w-6 text-primary" />
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-4">
-              Access lessons in Wolof, Serere, Peul, and more. Learn at your own pace with text and voice.
+              Accédez à des leçons en Wolof, Sérère, Peul, et plus encore. Apprenez à votre rythme avec du texte et de la voix.
             </p>
             <Link href="/lessons" legacyBehavior passHref>
               <Button variant="default" className="w-full">
-                Explore Lessons <ArrowRight className="ml-2 h-4 w-4" />
+                Explorer les Leçons <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </CardContent>
@@ -35,16 +35,16 @@ export default function DashboardPage() {
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xl font-semibold">AI Chatbot Tutor</CardTitle>
+            <CardTitle className="text-xl font-semibold">Tuteur IA (Chatbot)</CardTitle>
             <MessageCircle className="h-6 w-6 text-primary" />
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-4">
-              Get instant help and explanations from our AI tutor that speaks your language.
+              Obtenez de l'aide instantanée et des explications de notre tuteur IA qui parle votre langue.
             </p>
             <Link href="/chatbot" legacyBehavior passHref>
               <Button variant="default" className="w-full">
-                Ask the Tutor <ArrowRight className="ml-2 h-4 w-4" />
+                Demander au Tuteur <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </CardContent>
@@ -52,16 +52,16 @@ export default function DashboardPage() {
 
         <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-xl font-semibold">Digital Literacy</CardTitle>
+            <CardTitle className="text-xl font-semibold">Alphabétisation Numérique</CardTitle>
             <Laptop className="h-6 w-6 text-primary" />
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-4">
-              Learn essential digital skills in your local language to navigate the online world.
+              Apprenez les compétences numériques essentielles dans votre langue locale pour naviguer dans le monde en ligne.
             </p>
             <Link href="/literacy" legacyBehavior passHref>
               <Button variant="default" className="w-full">
-                Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+                Commencer l'Apprentissage <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </CardContent>
@@ -71,7 +71,7 @@ export default function DashboardPage() {
       <section className="grid gap-6 md:grid-cols-2">
          <Card className="shadow-md">
           <CardHeader>
-            <CardTitle className="text-xl">Why LinguaLearn?</CardTitle>
+            <CardTitle className="text-xl">Pourquoi Jàngandoo Numérique ?</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-start gap-4">
@@ -79,8 +79,8 @@ export default function DashboardPage() {
                 <Users className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">Inclusive Education</h3>
-                <p className="text-sm text-muted-foreground">Learn in your mother tongue, making education more accessible and effective.</p>
+                <h3 className="font-semibold">Éducation Inclusive</h3>
+                <p className="text-sm text-muted-foreground">Apprenez dans votre langue maternelle, rendant l'éducation plus accessible et efficace.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -88,8 +88,8 @@ export default function DashboardPage() {
                 <DownloadCloud className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">Offline Access</h3>
-                <p className="text-sm text-muted-foreground">Continue learning even without an internet connection, perfect for rural areas.</p>
+                <h3 className="font-semibold">Accès Hors Ligne</h3>
+                <p className="text-sm text-muted-foreground">Continuez à apprendre même sans connexion Internet, idéal pour les zones rurales.</p>
               </div>
             </div>
           </CardContent>
@@ -97,7 +97,7 @@ export default function DashboardPage() {
         <Card className="shadow-md overflow-hidden">
           <Image 
             src="https://placehold.co/600x400.png" 
-            alt="Senegalese children learning" 
+            alt="Enfants sénégalais apprenant" 
             width={600} 
             height={400} 
             className="w-full h-auto object-cover"

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'LinguaLearn Sénégal',
-  description: 'Plateforme d\'apprentissage et de tutorat en langues locales.',
+  title: 'Jàngandoo Numérique',
+  description: 'Jàngandoo Numérique : Plate-forme d\'apprentissage et de tutorat en langues locales.',
   manifest: '/manifest.json',
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Toaster />

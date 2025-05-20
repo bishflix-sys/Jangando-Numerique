@@ -43,11 +43,11 @@ export default function ChatbotPage() {
 
   const handleSendMessage = async () => {
     if (!question.trim()) {
-      toast({ title: "Error", description: "Please enter a question.", variant: "destructive" });
+      toast({ title: "Erreur", description: "Veuillez entrer une question.", variant: "destructive" });
       return;
     }
     if (!lessonContent.trim()) {
-      toast({ title: "Error", description: "Please provide some lesson content for context.", variant: "destructive" });
+      toast({ title: "Erreur", description: "Veuillez fournir un contenu de leçon pour le contexte.", variant: "destructive" });
       return;
     }
 
@@ -67,9 +67,9 @@ export default function ChatbotPage() {
       setMessages((prevMessages) => [...prevMessages, aiMessage]);
     } catch (error) {
       console.error("Error calling AI tutor:", error);
-      const errorMessage: Message = { id: (Date.now() + 1).toString(), text: "Sorry, I couldn't process your request. Please try again.", sender: "ai" };
+      const errorMessage: Message = { id: (Date.now() + 1).toString(), text: "Désolé, je n'ai pas pu traiter votre demande. Veuillez réessayer.", sender: "ai" };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
-      toast({ title: "AI Error", description: "There was an issue with the AI tutor.", variant: "destructive" });
+      toast({ title: "Erreur IA", description: "Un problème est survenu avec le tuteur IA.", variant: "destructive" });
     } finally {
       setIsLoading(false);
     }
@@ -78,35 +78,35 @@ export default function ChatbotPage() {
   return (
     <div className="flex flex-col h-[calc(100vh-10rem)] md:h-[calc(100vh-8rem)]">
       <header className="mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">AI Chatbot Tutor (Wolof)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tuteur IA (Wolof)</h1>
         <p className="text-muted-foreground text-lg">
-          Ask questions about a lesson in Wolof and get explanations.
+          Posez des questions sur une leçon en Wolof et obtenez des explications.
         </p>
       </header>
 
       <Alert className="mb-6 bg-accent/50 border-accent">
         <Info className="h-5 w-5 text-accent-foreground" />
-        <AlertTitle className="text-accent-foreground">How to use</AlertTitle>
+        <AlertTitle className="text-accent-foreground">Comment utiliser</AlertTitle>
         <AlertDescription className="text-accent-foreground/80">
-          1. Paste or type the lesson content you want to discuss in the &quot;Lesson Content&quot; box.
+          1. Collez ou tapez le contenu de la leçon que vous souhaitez aborder dans la case &quot;Contenu de la Leçon&quot;.
           <br />
-          2. Type your question in Wolof in the &quot;Your Question&quot; box.
+          2. Tapez votre question en Wolof dans la case &quot;Votre Question&quot;.
           <br />
-          3. Click &quot;Send&quot; or press Enter to get an explanation from the AI tutor.
+          3. Cliquez sur &quot;Envoyer&quot; ou appuyez sur Entrée pour obtenir une explication du tuteur IA.
         </AlertDescription>
       </Alert>
 
       <Card className="flex-grow flex flex-col shadow-lg">
         <CardHeader>
-          <CardTitle>Chat with AI Tutor</CardTitle>
-          <CardDescription>The AI will respond in Wolof.</CardDescription>
+          <CardTitle>Discuter avec le Tuteur IA</CardTitle>
+          <CardDescription>L'IA répondra en Wolof.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex flex-col space-y-4">
           <div className="space-y-2">
-            <label htmlFor="lessonContent" className="text-sm font-medium">Lesson Content (for context)</label>
+            <label htmlFor="lessonContent" className="text-sm font-medium">Contenu de la Leçon (pour contexte)</label>
             <Textarea
               id="lessonContent"
-              placeholder="Paste or type the lesson material here..."
+              placeholder="Collez ou tapez le matériel de la leçon ici..."
               value={lessonContent}
               onChange={(e) => setLessonContent(e.target.value)}
               className="h-24 resize-none bg-background"
@@ -166,16 +166,16 @@ export default function ChatbotPage() {
           >
             <Input
               type="text"
-              placeholder="Type your question in Wolof..."
+              placeholder="Tapez votre question en Wolof..."
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               className="flex-1 bg-background"
               disabled={isLoading}
-              aria-label="Your question in Wolof"
+              aria-label="Votre question en Wolof"
             />
             <Button type="submit" disabled={isLoading}>
               {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
-              Send
+              Envoyer
             </Button>
           </form>
         </CardFooter>

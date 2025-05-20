@@ -1,3 +1,4 @@
+
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -36,11 +37,11 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: '/dashboard', label: 'Dashboard', icon: Home, tooltip: 'Dashboard' },
-  { href: '/lessons', label: 'Translated Lessons', icon: BookOpen, tooltip: 'Lessons' },
-  { href: '/chatbot', label: 'AI Chatbot Tutor', icon: MessageCircle, tooltip: 'AI Tutor' },
-  { href: '/literacy', label: 'Digital Literacy', icon: Laptop, tooltip: 'Literacy' },
-  { href: '/offline', label: 'Offline Access', icon: DownloadCloud, tooltip: 'Offline' },
+  { href: '/dashboard', label: 'Tableau de Bord', icon: Home, tooltip: 'Tableau de Bord' },
+  { href: '/lessons', label: 'Leçons Traduites', icon: BookOpen, tooltip: 'Leçons' },
+  { href: '/chatbot', label: 'Tuteur IA', icon: MessageCircle, tooltip: 'Tuteur IA' },
+  { href: '/literacy', label: 'Alphabétisation Numérique', icon: Laptop, tooltip: 'Alphabétisation' },
+  { href: '/offline', label: 'Accès Hors Ligne', icon: DownloadCloud, tooltip: 'Hors Ligne' },
 ];
 
 export default function AppLayout({ children }: { children: ReactNode }) {
