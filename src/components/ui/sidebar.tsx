@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -262,8 +263,8 @@ Sidebar.displayName = "Sidebar"
 const SidebarTrigger = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
->(({ className, onClick, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar()
+>(({ className, onClick, children, asChild: propAsChild, ...props }, ref) => {
+  const { toggleSidebar } = useSidebar();
 
   return (
     <Button
@@ -273,16 +274,31 @@ const SidebarTrigger = React.forwardRef<
       size="icon"
       className={cn("h-7 w-7", className)}
       onClick={(event) => {
-        onClick?.(event)
-        toggleSidebar()
+        onClick?.(event);
+        toggleSidebar();
       }}
+      asChild={propAsChild} // Pass the asChild prop to the internal Button
       {...props}
     >
-      <PanelLeft />
-      <span className="sr-only">Toggle Sidebar</span>
+      {/* 
+        If propAsChild is true, this Button instance becomes a Slot.
+        It should then receive a SINGLE child, which is the 'children' prop 
+        passed to SidebarTrigger.
+        
+        If propAsChild is false (or undefined), this Button renders a <button> element.
+        It can have its own multiple children for its default appearance.
+      */}
+      {propAsChild ? (
+        children // If asChild, only render the children passed to SidebarTrigger
+      ) : (
+        <> {/* If not asChild, render default content (icon and sr-only span) */}
+          {children ?? <PanelLeft />} {/* Use children passed to SidebarTrigger, or default icon */}
+          <span className="sr-only">Toggle Sidebar</span>
+        </>
+      )}
     </Button>
-  )
-})
+  );
+});
 SidebarTrigger.displayName = "SidebarTrigger"
 
 const SidebarRail = React.forwardRef<
@@ -549,22 +565,25 @@ const SidebarMenuButton = React.forwardRef<
       size = "default",
       tooltip,
       className,
+      children, 
       ...props
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : "button" 
     const { isMobile, state } = useSidebar()
 
     const button = (
-      <Comp
+      <Comp 
         ref={ref}
         data-sidebar="menu-button"
         data-size={size}
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
-      />
+      >
+        {children} 
+      </Comp>
     )
 
     if (!tooltip) {
