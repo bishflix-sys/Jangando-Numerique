@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -31,6 +32,9 @@ export default function DashboardPage() {
     { value: "wo", label: "Wolof" },
     { value: "ff", label: "Pulaar (Peul)" },
     { value: "sr", label: "Sérère" },
+    { value: "joo", label: "Joola" },
+    { value: "mnk", label: "Mandinka" },
+    { value: "snk", label: "Soninké" },
   ];
 
   const handleTranslate = async () => {
@@ -125,7 +129,7 @@ export default function DashboardPage() {
               {isTranslating ? (
                 <LoaderTranslation className="mr-2 h-4 w-4 animate-spin" />
               ) : (
-                <Languages className="mr-2 h-4 w-4" /> // Using Languages icon for consistency
+                <Languages className="mr-2 h-4 w-4" /> 
               )}
               Traduire
             </Button>
