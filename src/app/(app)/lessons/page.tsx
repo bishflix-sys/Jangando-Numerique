@@ -4,60 +4,8 @@ import { Button } from "@/components/ui/button";
 import { LanguageIcon } from "@/components/icons/LanguageIcon";
 import { BookOpen, Volume2, PlayCircle } from "lucide-react";
 import Image from "next/image";
-
-interface Lesson {
-  id: string;
-  title: string;
-  description: string;
-  language: string; // e.g., "Wolof", "Serer", "Peul"
-  langCode: string; // e.g., "wo", "sr", "ff"
-  tags: string[];
-  imageUrl?: string;
-  imageHint?: string;
-}
-
-const lessons: Lesson[] = [
-  {
-    id: "1",
-    title: "Greetings in Wolof",
-    description: "Learn common greetings and introductions in Wolof.",
-    language: "Wolof",
-    langCode: "wo",
-    tags: ["Beginner", "Conversation"],
-    imageUrl: "https://placehold.co/600x300.png",
-    imageHint: "greeting people"
-  },
-  {
-    id: "2",
-    title: "Basic Numbers in Serer",
-    description: "Understand and use numbers from 1 to 10 in Serer.",
-    language: "Serer",
-    langCode: "sr",
-    tags: ["Beginner", "Numeracy"],
-    imageUrl: "https://placehold.co/600x300.png",
-    imageHint: "numbers counting"
-  },
-  {
-    id: "3",
-    title: "Family Members in Peul",
-    description: "Learn the vocabulary for family members in Peul.",
-    language: "Peul",
-    langCode: "ff", // Fula/Peul code
-    tags: ["Vocabulary", "Culture"],
-    imageUrl: "https://placehold.co/600x300.png",
-    imageHint: "family gathering"
-  },
-  {
-    id: "4",
-    title: "Market Shopping in Wolof",
-    description: "Essential phrases for shopping at a local market.",
-    language: "Wolof",
-    langCode: "wo",
-    tags: ["Intermediate", "Daily Life"],
-    imageUrl: "https://placehold.co/600x300.png",
-    imageHint: "market scene"
-  },
-];
+import Link from "next/link";
+import { lessons, type Lesson } from "@/lib/lessons-data";
 
 export default function LessonsPage() {
   return (
@@ -99,15 +47,16 @@ export default function LessonsPage() {
               </div>
             </CardContent>
             <CardFooter className="flex items-center justify-between gap-2 border-t pt-4">
-              {/* Placeholder for voice content */}
-              <Button variant="ghost" size="sm" aria-label="Écouter la leçon">
+              <Button variant="ghost" size="sm" aria-label="Écouter la leçon" disabled={!lesson.audioUrl}>
                 <Volume2 className="h-5 w-5 mr-2" />
                 Écouter
               </Button>
-              <Button variant="default" size="sm">
-                <PlayCircle className="h-5 w-5 mr-2" />
-                Commencer la Leçon
-              </Button>
+              <Link href={`/lessons/${lesson.id}`} legacyBehavior passHref>
+                <Button variant="default" size="sm" as="a">
+                  <PlayCircle className="h-5 w-5 mr-2" />
+                  Commencer la Leçon
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
