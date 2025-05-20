@@ -31,11 +31,13 @@ const prompt = ai.definePrompt({
   name: 'translateTextPrompt',
   input: {schema: TranslateTextInputSchema},
   output: {schema: TranslateTextOutputSchema},
-  prompt: `Tu es un traducteur expert. Traduis le texte suivant de {{sourceLanguage}} en {{targetLanguage}}.
+  prompt: `Tu es un traducteur expert et professionnel. Ta tâche est de traduire le texte suivant de {{sourceLanguage}} en {{targetLanguage}}.
+  Assure-toi que la traduction est extrêmement précise, fidèle au sens original et de la plus haute qualité possible. Évite les approximations et conserve les nuances du texte source.
+
   Texte à traduire :
   {{{textToTranslate}}}
 
-  Traduction :
+  Traduction précise et fidèle :
 `,
 });
 
