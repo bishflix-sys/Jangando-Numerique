@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,7 +53,7 @@ export default function LessonsPage() {
                 Écouter
               </Button>
               <Link href={`/lessons/${lesson.id}`} legacyBehavior passHref>
-                <Button variant="default" size="sm" as="a">
+                <Button variant="default" size="sm"> {/* Removed as="a" */}
                   <PlayCircle className="h-5 w-5 mr-2" />
                   Commencer la Leçon
                 </Button>
@@ -64,3 +65,4 @@ export default function LessonsPage() {
     </div>
   );
 }
+
