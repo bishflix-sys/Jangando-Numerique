@@ -69,17 +69,17 @@ export default function AppLayout({ children }: { children: ReactNode }) {
             <SidebarMenu className="px-2 py-4">
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href))}
-                    tooltip={{ children: item.tooltip, side: 'right', align: 'center' }}
-                    className="w-full justify-start"
-                  >
-                    <Link href={item.href}>
+                  <Link href={item.href} passHref legacyBehavior>
+                    <SidebarMenuButton
+                      as="a"
+                      isActive={pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href))}
+                      tooltip={{ children: item.tooltip, side: 'right', align: 'center' }}
+                      className="w-full justify-start"
+                    >
                       <item.icon className="mr-2 h-5 w-5 flex-shrink-0" />
                       <span className="truncate group-data-[collapsible=icon]:hidden">{item.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
+                    </SidebarMenuButton>
+                  </Link>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
